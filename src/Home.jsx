@@ -10,7 +10,6 @@ const Home = () => {
     const testApi = async () => {
         setLoading(true)
         let clientToken = sessionStorage.getItem('token');
-        console.log('token', clientToken)
         const res = callApiTest(clientToken, navigate, setLoading)
     
     }
@@ -31,7 +30,7 @@ const Home = () => {
                     <div>
                         <button disabled={loading} className="w-full mb-4 text-[18px] mt-6 rounded-full bg-blue-600 text-white  hover:bg-blue-800 p-2" onClick={testApi}>Test Api</button>
                     </div>
-                    <div name="testTB" id="testTB" className="m-4 text-center">ok</div>
+                    <div name="testTB" id="testTB" className="m-4 text-center"></div>
                     <button disabled={loading} className="w-full mb-4 text-[18px] mt-6 rounded-full bg-blue-600 text-white  hover:bg-blue-800 p-2" onClick={logOut}>LOG OUT</button>
             </div>
 

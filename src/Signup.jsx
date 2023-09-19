@@ -19,7 +19,6 @@ const Signup = () => {
         let regobj = { email, fullName, password };
         if (IsValidate()) {
             setLoading(true)
-            console.log(regobj);
             registerApi(regobj, navigate, setLoading)
         }
     }

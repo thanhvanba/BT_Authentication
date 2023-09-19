@@ -38,7 +38,6 @@ const ApiService = () => {
         })
             .then(res => res.json())
             .then((res) => {
-                console.log('res', res)
                 alert(res?.message)
                 navigate('/login');
             }).catch((err) => {
@@ -82,12 +81,9 @@ const ApiService = () => {
                     sessionStorage.removeItem('token');    
                     sessionStorage.setItem('token', res?.data?.token);
                     let clientToken = sessionStorage.getItem('token')
-                    console.log('clientToken', clientToken)
-                    console.log(setLoading)
                     callApiTest(clientToken, navigate,setLoading)
                 }
                 else {
-                    console.log(res?.data?.token)
                     alert('Failed :' + res?.message);
                     navigate('/login')
                 }
